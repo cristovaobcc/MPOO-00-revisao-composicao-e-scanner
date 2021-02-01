@@ -13,7 +13,7 @@ public class Controller {
 	public boolean insereNomeDeLivro(String nome, Integer estante) {
 		
 		Livro livro = new Livro(nome, estante);
-		metodoA(livro);
+		
 		return DadosArmazenados.livros.add(livro);
 	}
 	
