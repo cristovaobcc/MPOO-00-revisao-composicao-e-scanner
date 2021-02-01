@@ -30,10 +30,11 @@ public class View {
 			System.err.println("Cadastrar livro...");			
 			this.insereNomeDeLivro(scanner);
 			System.out.print("Deseja cadastrar um novo livro?(S/N) ");
-			opcao = scanner.next("[sSnN]{1}");
+			opcao = scanner.nextLine();
 			opcao = opcao.toLowerCase();
 			
 		} while (opcao.equals("s"));
+		scanner.close();
 	}
 	
 	
@@ -41,7 +42,7 @@ public class View {
 		System.out.print("Digite o nome do livro: ");
 		String nome = scanner.nextLine();
 		System.out.print("Digite o numero da estante: ");
-		String estante = scanner.next();
+		String estante = scanner.nextLine();
 		Integer numEstante = Integer.parseInt(estante);
 		return controller.insereNomeDeLivro(nome, numEstante);
 	}
