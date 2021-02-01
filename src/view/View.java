@@ -7,7 +7,7 @@ import controller.Controller;
 public class View {
 	
 	
-	private static Scanner scanner = new Scanner(System.in);
+	private Scanner scanner;
 	private Controller controller;
 	
 	
@@ -24,17 +24,20 @@ public class View {
 
 	public void cadastrarLivro() {
 		String opcao;
+		scanner = new Scanner(System.in);
 		do {
-			System.err.println("Cadastrar livro...");
-			this.insereNomeDeLivro();
+			
+			System.err.println("Cadastrar livro...");			
+			this.insereNomeDeLivro(scanner);
 			System.out.print("Deseja cadastrar um novo livro?(S/N) ");
 			opcao = scanner.next("[sSnN]{1}");
 			opcao = opcao.toLowerCase();
+			
 		} while (opcao.equals("s"));
 	}
 	
 	
-	public boolean insereNomeDeLivro() {
+	public boolean insereNomeDeLivro(Scanner scanner) {
 		System.out.print("Digite o nome do livro: ");
 		String nome = scanner.nextLine();
 		System.out.print("Digite o numero da estante: ");
